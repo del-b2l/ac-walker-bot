@@ -9,76 +9,20 @@
 </head>
 <body>
 
-  <!-- SCENE -->
-  <div class="scene-bg">
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-    <div class="house-row">
-      <div class="tree"><div class="tree-top"></div><div class="tree-trunk"></div></div>
-      <div class="house">
-        <div class="house-chimney"></div>
-        <div class="house-roof"></div>
-        <div class="house-body">
-          <div class="house-window left"></div>
-          <div class="house-window right"></div>
-          <div class="house-door"></div>
-        </div>
-      </div>
-      <div id="walkerWrap" class="walker-wrap">
-        <div id="speechBubble" class="speech-bubble hidden">Wuh...!</div>
-        <svg id="walkerSvg" class="walker-svg" viewBox="0 0 54 68" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="27" cy="46" rx="14" ry="15" fill="#d4a84b"/>
-          <circle cx="27" cy="24" r="16" fill="#e8c87a"/>
-          <ellipse cx="12" cy="20" rx="5" ry="7" fill="#e8c87a"/>
-          <ellipse cx="42" cy="20" rx="5" ry="7" fill="#e8c87a"/>
-          <ellipse cx="12" cy="20" rx="3" ry="5" fill="#f5b8b8"/>
-          <ellipse cx="42" cy="20" rx="3" ry="5" fill="#f5b8b8"/>
-          <ellipse cx="27" cy="30" rx="8" ry="5" fill="#f0d090"/>
-          <ellipse cx="27" cy="27" rx="4" ry="2.5" fill="#2c1a0e"/>
-          <ellipse cx="21" cy="22" rx="2.5" ry="3" fill="#1a0e06"/>
-          <ellipse cx="33" cy="22" rx="2.5" ry="3" fill="#1a0e06"/>
-          <circle cx="22" cy="21" r="1" fill="white"/>
-          <circle cx="34" cy="21" r="1" fill="white"/>
-          <path id="walkerMouth" d="M22 32 Q27 36 32 32" stroke="#8b5e3c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <ellipse cx="14" cy="55" rx="6" ry="5" fill="#e8c87a"/>
-          <ellipse cx="40" cy="55" rx="6" ry="5" fill="#e8c87a"/>
-          <ellipse cx="20" cy="64" rx="7" ry="4" fill="#c8944a"/>
-          <ellipse cx="34" cy="64" rx="7" ry="4" fill="#c8944a"/>
-        </svg>
-      </div>
-      <div class="tree"><div class="tree-top"></div><div class="tree-trunk"></div></div>
-    </div>
-    <div class="grass-strip"></div>
-  </div>
-
-  <!-- NAME + FRIENDSHIP -->
-  <div class="info-bar">
-    <div class="name-tag">
-      <span class="name-main">Walker</span>
-      <span class="name-sub">Lazy Villager  •  "arf"</span>
-    </div>
-    <div class="friendship-wrap">
-      <span class="friend-label">Friendship</span>
-      <div class="friend-bar-bg"><div id="friendBar" class="friend-bar-fill"></div></div>
-      <span id="friendText" class="friend-text">Strangers</span>
-    </div>
-  </div>
-
   <!-- CHAT -->
   <div id="chatArea" class="chat-area">
     <div class="msg-row walker">
       <div class="avatar walker-av"></div>
-      <div class="bubble walker-bubble">Wuh... oh! Hey there, neighbor! I was just thinking about snacks... arf! Come on in! 🏠</div>
+      <div class="bubble walker-bubble">Wuh... oh! Hey there, neighbor! I was just thinking about snacks... arf! Come on in!</div>
     </div>
   </div>
 
   <!-- QUICK CHIPS -->
   <div class="chips-row" id="chipsRow">
-    <button class="chip" onclick="quickSend('What are you up to today?')">What's up? 🌿</button>
-    <button class="chip" onclick="quickSend('Do you have a quest for me?')">Quest? 📋</button>
-    <button class="chip" onclick="quickSend('Tell me about your house')">Your house 🏠</button>
-    <button class="chip" onclick="quickSend('What is your favorite food?')">Fav food? 🍜</button>
+    <button class="chip" onclick="quickSend('What are you up to today?')">What's up?</button>
+    <button class="chip" onclick="quickSend('Do you have a quest for me?')">Quest?</button>
+    <button class="chip" onclick="quickSend('Tell me about your house')">Your house</button>
+    <button class="chip" onclick="quickSend('What is your favorite food?')">Fav food?</button>
   </div>
 
   <!-- INPUT -->
@@ -87,6 +31,19 @@
     <button id="sendBtn" class="send-btn" onclick="sendMessage()">
       <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
     </button>
+  </div>
+
+  <!-- NAME + FRIENDSHIP -->
+  <div class="info-bar">
+    <div class="name-tag">
+      <span class="name-main">Walker</span>
+      <span class="name-sub">Lazy Villager  •  "wuh!"</span>
+    </div>
+    <div class="friendship-wrap">
+      <span class="friend-label">Friendship</span>
+      <div class="friend-bar-bg"><div id="friendBar" class="friend-bar-fill"></div></div>
+      <span id="friendText" class="friend-text">Strangers</span>
+    </div>
   </div>
 
   <script src="app.js"></script>
