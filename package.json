@@ -4,7 +4,7 @@
   "description": "Walker from Animal Crossing - local chatbot app",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron . --no-sandbox"
   },
   "dependencies": {
     "dotenv": "^16.0.0",

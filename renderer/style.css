@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,10 +22,11 @@
 html, body {
   width: 100%; height: 100%;
   overflow: hidden;
-  font-family: 'Nunito', sans-serif;
-  background: var(--cream);
+  font-family: 'VT323', monospace;
+  background: #e4ddc5;
   color: var(--text);
   user-select: none;
+  image-rendering: pixelated;
 }
 
 /* ── SCENE ── */
@@ -35,6 +36,7 @@ html, body {
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  border-bottom: 4px solid #5b4a33;
 }
 
 .cloud {
@@ -181,15 +183,16 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 8px 14px;
-  background: var(--green);
-  border-bottom: 2.5px solid var(--green-dark);
+  background: #739f5d;
+  border-top: 3px solid #9cc57f;
+  border-bottom: 3px solid #2f5326;
 }
 .name-tag { display: flex; flex-direction: column; }
-.name-main { font-size: 15px; font-weight: 900; color: white; line-height: 1.1; }
-.name-sub  { font-size: 10px; font-weight: 600; color: #c8f0a8; }
+.name-main { font-size: 26px; letter-spacing: 0.8px; color: white; line-height: 1; }
+.name-sub  { font-size: 16px; color: #def5c4; }
 
 .friendship-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
-.friend-label { font-size: 10px; font-weight: 700; color: #c8f0a8; }
+.friend-label { font-size: 16px; color: #c8f0a8; }
 .friend-bar-bg {
   width: 90px; height: 8px;
   background: rgba(0,0,0,0.25);
@@ -202,7 +205,7 @@ html, body {
   width: 0%;
   transition: width 0.6s ease;
 }
-.friend-text { font-size: 10px; font-weight: 700; color: white; }
+.friend-text { font-size: 16px; color: white; }
 
 /* ── CHAT ── */
 .chat-area {
@@ -212,7 +215,15 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: #faf6e4;
+  background-color: #f0e4c4;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.12)),
+    url("../media/145244.png");
+  background-size: auto, 180%;
+  background-position: center, 62% 34%;
+  background-repeat: repeat, no-repeat;
+  border-top: 3px solid #b49b70;
+  border-bottom: 3px solid #b49b70;
   min-height: 0;
   height: 350px;
 }
@@ -234,37 +245,40 @@ html, body {
   flex-shrink: 0; border: 2px solid var(--border);
   background: var(--green-light);
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 800; color: var(--green-dark);
+  font-size: 16px; color: var(--green-dark);
 }
 .walker-av {
   background: #e8c87a;
   border-color: var(--brown-light);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23e8c87a'/%3E%3Cellipse cx='14' cy='17' rx='5' ry='3' fill='%23f0d090'/%3E%3Cellipse cx='14' cy='15' rx='3' ry='2' fill='%232c1a0e'/%3E%3Cellipse cx='11' cy='12' rx='1.8' ry='2.2' fill='%231a0e06'/%3E%3Cellipse cx='17' cy='12' rx='1.8' ry='2.2' fill='%231a0e06'/%3E%3C/svg%3E");
+  background-image: url("../media/Walker's_Pic_NL_Texture.png");
   background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
 }
 
 .bubble {
   max-width: 72%;
   padding: 8px 12px;
-  border-radius: 14px;
-  font-size: 13px; font-weight: 600; line-height: 1.55;
+  border-radius: 6px;
+  font-size: 18px; line-height: 1.2;
   color: var(--text);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 .walker-bubble {
   background: var(--bubble-walker);
-  border: 2px solid #e0cc78;
-  border-radius: 3px 14px 14px 14px;
+  border: 2px solid #9d8345;
+  border-radius: 2px 8px 8px 8px;
 }
 .you-bubble {
   background: var(--bubble-you);
-  border: 2px solid #82c060;
-  border-radius: 14px 3px 14px 14px;
+  border: 2px solid #4f8f3a;
+  border-radius: 8px 2px 8px 8px;
 }
 
 .typing-bubble {
   background: var(--bubble-walker);
-  border: 2px solid #e0cc78;
-  border-radius: 3px 14px 14px 14px;
+  border: 2px solid #9d8345;
+  border-radius: 2px 8px 8px 8px;
   padding: 10px 14px;
   display: flex; gap: 4px; align-items: center;
 }
@@ -284,16 +298,17 @@ html, body {
 .chips-row {
   display: flex; gap: 6px; flex-wrap: wrap;
   padding: 8px 14px 4px;
-  background: #f0ecd2;
-  border-top: 1.5px solid var(--cream-dark);
+  background: #d8ccb0;
+  border-top: 2px solid #fff4d6;
+  border-bottom: 2px solid #a7926b;
 }
 .chip {
   padding: 4px 11px;
   background: var(--yellow);
-  border: 1.5px solid var(--brown-light);
-  border-radius: 20px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 11.5px; font-weight: 700;
+  border: 2px solid #8b6d3c;
+  border-radius: 4px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
   color: var(--brown);
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
@@ -305,16 +320,16 @@ html, body {
 .input-row {
   display: flex; gap: 8px; align-items: center;
   padding: 10px 12px 12px;
-  background: #f0ecd2;
-  border-top: 2px solid var(--border);
+  background: #d8ccb0;
+  border-top: 3px solid #7f6a46;
 }
 .chat-input {
   flex: 1;
   padding: 9px 14px;
-  border: 2px solid var(--border);
-  border-radius: 30px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 13px; font-weight: 600;
+  border: 3px solid #8d7449;
+  border-radius: 6px;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
   background: white; color: var(--text);
   outline: none;
   transition: border-color 0.2s;
@@ -323,9 +338,9 @@ html, body {
 .chat-input::placeholder { color: #b8a07a; }
 
 .send-btn {
-  width: 40px; height: 40px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 6px;
   background: var(--green);
-  border: 2px solid var(--green-dark);
+  border: 3px solid #2f5326;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.15s, transform 0.1s;
