@@ -9,6 +9,18 @@
 </head>
 <body>
 
+  <!-- API KEY SETUP -->
+  <div id="keySetup" class="key-setup">
+    <p class="key-label">Enter your Groq API key to start</p>
+    <div class="key-row">
+      <input type="password" id="keyInput" class="chat-input" placeholder="gsk_..." />
+      <button class="send-btn" onclick="saveKey()">
+        <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </button>
+    </div>
+    <p id="keyErr" class="key-err"></p>
+  </div>
+
   <!-- CHAT -->
   <div id="chatArea" class="chat-area">
     <div class="msg-row walker">

@@ -150,6 +150,17 @@ function quickSend(msg) {
   sendMessage()
 }
 
+async function saveKey() {
+  const key = document.getElementById('keyInput').value.trim()
+  if (!key.startsWith('gsk_')) {
+    document.getElementById('keyErr').textContent = 'That doesn\'t look right — Groq keys start with gsk_'
+    return
+  }
+  await window.walker.saveData({ groqKey: key })
+  document.getElementById('keySetup').style.display = 'none'
+  document.getElementById('keyErr').textContent = ''
+}
+
 // ── Enter key ────────────────────────────────────────────────
 
 document.getElementById('msgInput').addEventListener('keydown', e => {
@@ -170,7 +181,12 @@ if (walkerWrap) {
 
 // ── Load save on startup ─────────────────────────────────────
 
-; (async () => {
+;(async () => {
   save = await window.walker.loadSave()
   updateFriendshipUI(save.friendship || 0)
+
+  // hide key setup if key already saved
+  if (save.groqKey) {
+    document.getElementById('keySetup').style.display = 'none'
+  }
 })()

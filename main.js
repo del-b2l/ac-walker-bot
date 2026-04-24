@@ -73,29 +73,27 @@ function withTimeout(promise, ms) {
   ])
 }
 
-ipcMain.handle('chat', async (_, payload = {}) => {
-  const messages = Array.isArray(payload.messages) ? payload.messages : []
+ipcMain.handle('chat', async (_, { messages }) => {
   const save = loadSave()
+  
+  if (!save.groqKey) {
+    return { error: 'No API key saved yet' }
+  }
+
+  const groq = new Groq({ apiKey: save.groqKey })
 
   try {
-    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
-    const completion = await withTimeout(
-      groq.chat.completions.create({
-        model: 'llama-3.3-70b-versatile',
-        max_tokens: 150,
-        messages: [
-          { role: 'system', content: WALKER_SYSTEM },
-          ...messages
-        ]
-      }),
-      20000
-    )
-    const reply = completion?.choices?.[0]?.message?.content || "Wuh... my brain feels sleepy right now, arf."
-
-    // increment friendship
+    const completion = await groq.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 150,
+      messages: [
+        { role: 'system', content: WALKER_SYSTEM },
+        ...messages
+      ]
+    })
+    const reply = completion.choices[0].message.content
     save.friendship = (save.friendship || 0) + 1
     writeSave(save)
-
     return { reply, friendship: save.friendship }
   } catch (err) {
     return { error: err.message }
