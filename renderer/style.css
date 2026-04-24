@@ -214,7 +214,7 @@ html, body {
   gap: 10px;
   background: #faf6e4;
   min-height: 0;
-  height: 280px;
+  height: 350px;
 }
 .chat-area::-webkit-scrollbar { width: 5px; }
 .chat-area::-webkit-scrollbar-thumb { background: var(--green-light); border-radius: 10px; }
