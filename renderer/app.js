@@ -7,9 +7,9 @@ let save = { friendship: 0, quests: [], playerName: 'neighbor' }
 const TIERS = [
   { min: 0,  max: 3,  label: 'Strangers',    pct: 5  },
   { min: 4,  max: 8,  label: 'Acquaintances',pct: 25 },
-  { min: 9,  max: 15, label: 'Pals 🌱',       pct: 50 },
-  { min: 16, max: 25, label: 'Good Friends 🌿',pct: 72 },
-  { min: 26, max: 999,label: 'Best Friends! 🍀',pct: 100}
+  { min: 9,  max: 15, label: 'Pals',       pct: 50 },
+  { min: 16, max: 25, label: 'Good Friends',pct: 72 },
+  { min: 26, max: 999,label: 'Best Friends!',pct: 100}
 ]
 
 function getTier(count) {
