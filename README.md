@@ -61,7 +61,7 @@ Your app will appear in the dist/ folder as:
 - .AppImage on Linux
 - .exe installer on Windows
 
-### Friendship Levels 🤝
+### Friendship Levels
 - Strangers
 - Acquaintances
 - Pals
@@ -83,6 +83,8 @@ ac-walker-bot/
 │   └── app.js           # Chat logic and UI
 └── package.json
 ```
+
+---
 
 ### 🍄 Notes for Beginners
 - Your save data (friendship level, API key) is stored locally in Electron's userData folder; never in the cloud
